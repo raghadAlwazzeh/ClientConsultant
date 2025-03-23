@@ -1,0 +1,79 @@
+/* Style for the secondary header */
+.secondary-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px;
+    font-size: 16px;
+}
+
+.nav-link.selected {
+    color: #3a71d8;
+}
+
+.secondary-header .navbar-nav2 {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.secondary-header .navbar-nav2 li a {
+    
+    padding: 8px 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-link{
+    color: #666464;
+}
+
+.secondary-header .navbar-nav2>li>a {
+    
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+}
+
+@media (min-width: 768px) {
+    .navbar-left2 {
+        float: left !important;
+        margin: 0;
+    }
+}
+.nav2 {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+.navbar-nav2 {
+    margin: 7.5px -15px;
+}
+.secondary-header .navbar-nav2>li>a:hover,
+.secondary-header .navbar-nav2>li>a:focus {
+    color: #3a71d8;
+    background-color: transparent;
+}
+
+/* Making it responsive */
+@media (max-width: 768px) {
+    .secondary-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .secondary-header .secondary-nav {
+        position: static;
+        margin-bottom: 10px;
+    }
+
+    .secondary-header .nav {
+        flex-direction: column;
+    }
+
+    .secondary-header .nav .nav-item {
+        margin-bottom: 5px;
+    }
+}
+
