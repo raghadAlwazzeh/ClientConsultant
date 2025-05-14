@@ -38,4 +38,20 @@ class Client extends Model
     {
         return $this->hasMany(ClientLanguageSkill::class);
     }
+    public function sessionProtocol()
+    {
+        return $this->hasMany(SessionProtocol::class);
+    }
+    public function calendars()
+    {
+        return $this->hasMany(Calendar::class);
+    }
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
+    public function documents()
+    {
+        return $this->hasMany(ClientDocument::class);
+    }
 }

@@ -197,7 +197,7 @@
                     <label for="evaluation_date">Datum der Antragsstellung ZAB</label>
                     <input type="date" id="evaluation_date" name="evaluation_date" >
                 </div>
-                <button class="btn-primary btn-form" type="submit" >Submit</button>
+                <button class="btn-primary btn-form" type="submit" >Speichern</button>
             <div>
         </div>
 

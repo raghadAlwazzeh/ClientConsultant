@@ -4,7 +4,27 @@
 @stop
 
 @section('main')
-
+<header class="secondary-header py-2" style="
+    position: fixed; 
+    top: 50px; /* Adjust based on primary header height */
+    width: 100%;
+    margin: bottom 20px; 
+    z-index: 999;
+    text-align: center;">
+     <nav class="navbar2 navbar-expand-lg">
+    
+    <div class="">
+                    <ul class="nav2 navbar-nav2 navbar-left2">
+                        <li><a href="{{ route('clients.showinformation', $education->client->id) }}" class="nav-link">persönliche Daten</a></li>
+                        <li><a href="{{ route('clients.showqualification', $education->client->id) }}" class="nav-link">Qualificationen</a></li>
+                        <li><a href="{{ route('conversationprotocol.showall', $education->client->id) }}"  class="nav-link">Gesprächsprotokolle</a></li>
+                        <li><a href="{{ url('calendar/'. $education->client->id) }}"  class="nav-link">Kalendar</a></li>
+                        <li><a href="{{ route('client.document.show', $education->client->id) }}"  class="nav-link">Dokument</a></li>
+                        <!--li class="dropdown"><a href="/career" class="nav-link">mmm</a></li-->
+                    </ul>   
+    </div>
+     </nav>
+</header>
 
 
 <form action="{{ route('universitydegree.update', $education->id) }}" method="POST">
@@ -12,6 +32,7 @@
     @method('PATCH')
     
     <div class="whole-container" style="width: 100%;">
+    <h3> {{$education->client->last_name}}, {{$education->client->first_name}}</h3>
         <div class="form-container">
             <label for="form" class="form-label">Hochschulabschluss </label>
             <div class="responsive-form">
@@ -70,7 +91,7 @@
                 </div>
                 <div class="form-row">
                     <label for="another_refernce_job">Falls Sonstiges</label>
-                    <input type="text" id="another_refernce_job" name="another_refernce_job" >
+                    <input type="text" id="another_refernce_job" name="another_refernce_job" value="{{$education->another_refernce_job}}">
                 </div>
                 <div class="form-row">
                     <label for="regulated">Reglementiert</label>

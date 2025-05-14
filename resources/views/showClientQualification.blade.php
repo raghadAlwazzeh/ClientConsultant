@@ -17,9 +17,13 @@
     
     <div class="">
                     <ul class="nav2 navbar-nav2 navbar-left2">
-                        <li class="active"><a href="{{ route('clients.showinformation', $client->id) }}" class="nav-link">persönliche Daten</a></li>
-                        <li class="dropdown"><a href="{{ route('clients.showqualification', $client->id) }}" class="nav-link">Qualificationen</a></li>
-                        <li class="dropdown"><a href="/services"  class="nav-link">Gesprächsprotokolle</a></li>
+                        <li ><a href="{{ route('clients.showinformation', $client->id) }}" class="nav-link">persönliche Daten</a></li>
+                        <li><a href="{{ route('clients.showqualification', $client->id) }}" class="nav-link">Qualificationen</a></li>
+                        <li><a href="{{ route('conversationprotocol.showall', $client->id) }}"  class="nav-link">Gesprächsprotokolle</a></li>
+                        <li><a href="{{ route('task.show', $client->id) }}"  class="nav-link">Aufgaben</a></li>
+                        <li><a href="{{ route('calendar', $client->id) }}"  class="nav-link">Kalendar</a></li>
+                        <li><a href="{{ route('client.document.show', $client->id) }}"  class="nav-link">Dokument</a></li>
+
                         <!--li class="dropdown"><a href="/career" class="nav-link">mmm</a></li-->
                     </ul>   
     </div>
@@ -44,7 +48,7 @@
             <tbody id="clientTable"> 
             @if($client->schoolEducation->isNotEmpty())  
             @foreach($client->schoolEducation as $education)   
-                <tr class="clickable-row" data-href="{{ route('clients.showinformation', $client->id) }}">
+                <tr class="clickable-row" data-href="{{ route('client.showschooleducation', $education->id) }}">
                     <td> {{ $education->school_country }}</td>
                     <td>{{ $education->school_study_duration }}</td>
                     <td>{{ $education->school_graduation_year }}</td>
@@ -82,7 +86,7 @@
             <tbody id="clientTable"> 
             @if($client->training->isNotEmpty())  
             @foreach($client->training as $training)   
-                <tr class="clickable-row" data-href="{{ route('clients.showinformation', $client->id) }}">
+                <tr class="clickable-row" data-href="{{ route('client.showtraining', $training->id) }}">
                     <td> {{ $training->training_country }}</td>
                     <td>{{ $training->training_study_duration }}</td>
                     <td>{{$training->training_graduation_year }}</td>
@@ -120,7 +124,7 @@
             <tbody id="clientTable"> 
             @if($client->universityDegree->isNotEmpty())  
             @foreach($client->universityDegree as $degree)   
-                <tr class="clickable-row" data-href="">
+                <tr class="clickable-row" data-href="{{ route('client.showuniversitydegree', $degree->id) }}">
                     <td> {{ $degree->country }}</td>
                     <td>{{$degree->study_duration }}</td>
                     <td>{{ $degree->graduation_year }}</td>
@@ -155,7 +159,7 @@
             <tbody id="clientTable"> 
             @if($client->jobSituation->isNotEmpty())  
             @foreach($client->jobSituation as $job)   
-                <tr class="clickable-row" data-href="{{ route('clients.showinformation', $client->id) }}">
+                <tr class="clickable-row" data-href="{{ route('client.showjob', $job->id) }}">
                     <td> {{ $job->employment_status }}</td>
                     <td>{{ $job->funding_source }}</td>
                     <td>{{ $job->residence_status }}</td>
@@ -187,7 +191,7 @@
             <tbody id="clientTable"> 
             @if($client->languageSkill->isNotEmpty())  
             @foreach($client->languageSkill as $language)   
-                <tr class="clickable-row" data-href="{{ route('clients.showinformation', $client->id) }}">
+                <tr class="clickable-row" data-href="{{ route('client.showlanguageskill', $language->id) }}">
                     <td> {{ $language->german_skill }}</td>
                     <td>{{ $language->german_certificate }}</td>
                     <td>{{ $language->german_level }}</td>

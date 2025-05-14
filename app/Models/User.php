@@ -50,5 +50,18 @@ class User extends \TCG\Voyager\Models\User
         return $this->hasMany(Client::class, 'user_id', 'id'); 
         // One advisor (user) can have multiple clients
     }
+    public function SessionProtocol()
+    {
+        return $this->hasMany(ConversationProtocol::class, 'user_id', 'id'); 
+    }
+    public function calendars()
+    {
+        return $this->hasMany(Calendar::class);
+    }
+
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
     
 }

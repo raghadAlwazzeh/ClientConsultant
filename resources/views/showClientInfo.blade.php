@@ -18,9 +18,13 @@
     
     <div class="">
                     <ul class="nav2 navbar-nav2 navbar-left2">
-                        <li class="active"><a href="{{ route('clients.showinformation', $client->id) }}" class="nav-link">persönliche Daten</a></li>
-                        <li class="dropdown"><a href="{{ route('clients.showqualification', $client->id) }}" class="nav-link">Qualificationen</a></li>
-                        <li class="dropdown"><a href="/services"  class="nav-link">Gesprächsprotokolle</a></li>
+                        <li ><a href="{{ route('clients.showinformation', $client->id) }}" class="nav-link">persönliche Daten</a></li>
+                        <li><a href="{{ route('clients.showqualification', $client->id) }}" class="nav-link">Qualificationen</a></li>
+                        <li><a href="{{ route('conversationprotocol.showall', $client->id) }}"  class="nav-link">Gesprächsprotokolle</a></li>
+                        <li><a href="{{ route('task.show', $client->id) }}"  class="nav-link">Aufgaben</a></li>
+                        <li><a href="{{ route('calendar', $client->id) }}"  class="nav-link">Kalendar</a></li>
+                        <li><a href="{{ route('client.document.show', $client->id) }}"  class="nav-link">Dokument</a></li>
+
                         <!--li class="dropdown"><a href="/career" class="nav-link">mmm</a></li-->
                     </ul>   
     </div>

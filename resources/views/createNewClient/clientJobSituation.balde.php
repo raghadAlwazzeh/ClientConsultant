@@ -63,7 +63,7 @@
                     </select>
                 </div>
                 
-                <button class="btn-primary btn-form" type="submit" >Submit</button>
+                <button class="btn-primary btn-form" type="submit" >Speichern</button>
             </div>
         </div>
 

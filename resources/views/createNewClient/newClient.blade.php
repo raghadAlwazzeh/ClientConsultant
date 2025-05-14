@@ -356,7 +356,7 @@
                     <label for="rating"> Ergebnis Zeugnisbewertung</label>
                     <input type="text" id="rating" name="rating" >
                 </div> 
-                <button class="btn-primary btn-form" type="submit" >Submit</button>
+                <button class="btn-primary btn-form" type="submit" >Speichern</button>
             </div>
         </div>
     

@@ -13,7 +13,7 @@
     
     <div class="whole-container" style="width: 100%;">
         <div class="form-container">
-            <label for="form" class="form-label">SparchKenntnisse</label>
+            <label for="form" class="form-label">SprachKenntnisse</label>
             <div class="responsive-form">
                 <div class="form-row">
                 <label for="german_skills">DeutchKenntnisse der/des Ratsuchenden</label>
@@ -54,7 +54,7 @@
                 </div>
                 
                 
-                <button class="btn-primary btn-form" type="submit" >Submit</button>
+                <button class="btn-primary btn-form" type="submit" >Speichern</button>
             </div>
         </div>
 

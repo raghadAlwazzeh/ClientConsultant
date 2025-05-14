@@ -2692,7 +2692,7 @@ li.dropdown.menu-animating > .submenu-sub-wrapper {
 
 .responsive-form, .responsive-info {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, +1fr);
     gap: 20px;
 }
 
@@ -2714,13 +2714,15 @@ label {
     margin-right: 5px;
     font-weight: bold;
 }
-input, textarea, select {
+input:not([type="checkbox"]), textarea, select {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1.5rem;
     width: 75%;
 }
+
+
 
 textarea {
     resize: vertical;
@@ -2733,7 +2735,7 @@ textarea {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .responsive-form {
+    .responsive-form, .responsive-info{
         grid-template-columns: 1fr; /* Single column on smaller screens */
     }
 }

@@ -6,8 +6,8 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-left">
                         <li class="active"><a href="/" class="nav-link">Ratsuchende/r</a></li>
-                        <li class="dropdown"><a href="/welcome" class="nav-link">Addressen/ Kontakt</a></li>
-                        <li class="dropdown"><a href="/services" class="nav-link">Dokumente</a></li>
+                        <li class="dropdown"><a href="/" class="nav-link">Addressen/ Kontakt</a></li>
+                        <li class="dropdown"><a href="/documentbop/show" class="nav-link">Dokumente</a></li>
                         <li class="dropdown"><a href="/career" class="nav-link">Statistik</a></li>
                     </ul>
 
@@ -52,7 +52,7 @@
             <ul>
                 <li><a href="/"><i class="fa fa-users"></i> Ratsuchende</a></li>
                 <li><a href="/aboutus"><i class="fa"></i>Addressen/ Kontakt</a></li>
-                <li><a href="/services"><i class="fa"></i>Dokumente</a></li>
+                <li><a href="/documentbop/show"><i class="fa"></i>Dokumente</a></li>
                 <li><a href="/contactus"><i class="fa"></i>Statistik</a></li>
 
                 <!-- Logout in Mobile Menu -->

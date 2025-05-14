@@ -9,6 +9,6 @@ class ClientJobSituation extends Model
     protected $guarded = [];
     public function client()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Client::class);
     }
 }
