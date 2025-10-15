@@ -40,6 +40,15 @@
             <label for="form" class="form-label">Dokumentdaten</label>      
                 <div class="responsive-form">
                     <div class="form-row">
+                        <label for="client">Ratsuchende</label>
+                        <select id="client" name="client" required>
+                            <option value="{{ $client->id }}">{{ $client->last_name }}, {{ $client->first_name }}</option>
+                        </select>
+                    </div>
+                    <div class="form-row" hidden>
+                        
+                    </div>
+                    <div class="form-row">
                         <label for="title">Title<span class="req">*</span></label>
                         <input type="text" id="title" name="title" require>
                     </div> 

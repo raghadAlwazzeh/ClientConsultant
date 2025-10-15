@@ -19,11 +19,9 @@
                 <label for="school_country">Erwerbsland <span class="req">*</span></label>
                     <select id="school_country" name="school_country" required>
                         <option value="">-- Erwerbsland --</option>
-                        <option value="usa">United States</option>
-                        <option value="canada">Canada</option>
-                        <option value="uk">United Kingdom</option>
-                        <option value="india">India</option>
-                        <option value="australia">Australia</option>
+                        @foreach(config('appdata.countries') as $code => $name)
+                            <option value="{{ $code }}"> {{ $name }}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="form-row">
@@ -37,7 +35,7 @@
                         
                     </select>
                 </div>
-                <div class="form-row">
+                <!--div class="form-row">
                 <label for="qualification_level">vergleichbares Abschluss-Niveau </label>
                     <select id="qualification_level" name="qualification_level">
                         <option value="">----</option>
@@ -47,6 +45,10 @@
                         <option value="india">India</option>
                         <option value="australia">Australia</option>
                     </select>
+                </div-->
+                <div class="form-row">
+                    <label for="qualification_level">vergleichbares Abschluss-Niveau </label>
+                    <input type="text" id="qualification_level" name="qualification_level">
                 </div>
                 <div class="form-row">
                     <label for="sschool_institution">Ausbildungsinstitution</label>
@@ -65,7 +67,7 @@
                     <input type="text" id="school_german_translate" name="school_german_translate" >
                 </div>
 
-                <div class="form-row">
+                <!--div class="form-row">
                     <label for="school_available_certificate">Nachweise Vorhanden </label>
                     <select id="school_available_certificate" name="school_available_certificate">
                         <option value="">----</option>
@@ -75,8 +77,21 @@
                         <option value="india">India</option>
                         <option value="australia">Australia</option>
                     </select>
-                </div>
+                </div-->
+
                 <div class="form-row">
+                    <label>Nachweise Vorhanden</label>
+                    <div class="choice-group">
+                        <label class="choice-label">
+                            <input type="radio" name="school_available_certificate" value="yes"> Ja
+                        </label>
+                        <label class="choice-label">
+                            <input type="radio" name="school_available_certificate" value="no"> Nein
+                        </label>
+                    </div>
+                </div>
+
+                <!--div class="form-row">
                     <label for="school_available_translation">Übersetzung Vorhanden</label>
                     <select id="school_available_translation" name="school_available_translation">
                         <option value="">----</option>
@@ -86,8 +101,24 @@
                         <option value="india">India</option>
                         <option value="australia">Australia</option>
                     </select>
+                </div-->
+
+                <div class="form-row">
+                    <label>Übersetzung Vorhanden</label>
+                    <div class="choice-group">
+                        <label class="choice-label">
+                            <input type="radio" name="school_available_translation" value="yes"> Ja
+                        </label>
+                        <label class="choice-label">
+                            <input type="radio" name="school_available_translation" value="no"> Nein
+                        </label>
+                    </div>
                 </div>
                 <button class="btn-primary btn-form" type="submit" >Speichern</button>
+                @if($id==null)
+                    <a href="/newclient/training">skip</a>
+                @endif
+
             </div>
         </div>
 

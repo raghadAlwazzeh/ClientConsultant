@@ -19,8 +19,6 @@
                         <li class="active"><a href="/contactperson/show" class="nav-link">Standorte</a></li>
                         <li class="dropdown"><a href="/networkpartner/show" class="nav-link">Netzwekpartner</a></li>
                         <li class="dropdown"><a href="/cooporation/show" class="nav-link">Kooperationen</a></li>
-                        <!--li class="dropdown"><a href="/services"  class="nav-link">ddd</a></li>
-                        <li class="dropdown"><a href="/career" class="nav-link">mmm</a></li-->
                     </ul>   
     </div>
      </nav>
@@ -35,11 +33,11 @@
 
 
 <div class="table-container table-responsive">
-    <h2>Liste der Netrzwerkpartner/ Betriebe</h2>
+    <h2>Liste der Kooperation</h2>
 
    
-    <form method="GET" action="{{ route('networkpartner.show') }}">
-        <input type="text" id="searchBox" name="search" placeholder="Search networkPartner..." value="{{ request('search') }}">
+    <form method="GET" action="{{ route('cooporation.show') }}">
+        <input type="text" id="searchBox" name="search" placeholder="Search Cooporations..." value="{{ request('search') }}">
         <button type="submit">Search</button>
     </form>
 
@@ -47,44 +45,40 @@
         <thead>
             <tr>
                 <th>Name</th>
-                <th>Typ</th>
-                <th>be_bereich</th>
-                <th>PLZ</th>
-                <th>Ort</th>
-                <th>Telefon</th>
-                <th>Email</th>
-                <th>freie Stellen</th>
+                <th>Datum der Veranstaltung</th>
+                <th>Veranstaltungsart</th>
+                <th>zuletzt bearbeitet</th>
+                <th>von</th>
+                <th></th>
             </tr>
         </thead>
         <tbody id="clientTable">
-            @if($partners->isNotEmpty())
-        @foreach ($partners->items() as $partner)
+            @if($corporations->isNotEmpty())
+        @foreach ($corporations->items() as $corporation)
             <tr class="clickable-row" data-href="">
-                <td>{{ $partner->name }}</td>
-                <td>{{ $partner->type }}</td>
-                <td>{{ $partner->field }}</td>
-                <td>{{ $partner->zip_code }}</td>
-                <td>{{ $partner->location }}</td>
-                <td>{{ $partner->phone}}</td>
-                <td>{{ $partner->email}}</td>
-                <td>{{ $partner->vacancies }}</td>
+                <td>{{ $corporation->short_title }}</td>
+                <td>{{ $corporation->event_date }}</td>
+                <td>{{ $corporation->event_type }}</td>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
         @endforeach
         @else
         <tr>
-                <td colspan="8" class="text-center">Keine Anträge vorhanden</td>
+                <td colspan="6" class="text-center">Keine Anträge vorhanden</td>
         </tr>
         @endif
        
 
-            <tr class="clickable-row" data-href="{{url('/networkpartner/add')}}">
-                <td colspan="8" class="text-center"><b>Neuen Netzwekpartner eintragen</b></td>
+            <tr class="clickable-row" data-href="{{url('/cooporation/add')}}">
+                <td colspan="6" class="text-center"><b>Neue Kooperation eintragen</b></td>
             </tr>
         </tbody>
     </table>
     <!-- Pagination Links -->
     <div class="pagination">
-        {{ $partners->links() }}
+        {{ $corporations->links() }}
     </div>
 </div>
 

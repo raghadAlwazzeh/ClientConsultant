@@ -34,7 +34,7 @@
 
 
 <div class="table-container table-responsive">
-    <h2>client Information</h2>
+    <h2>Dokumente Übersicht und Auswahl</h2>
 
    
     <form method="GET" action="{{ route('documentbou.show') }}">

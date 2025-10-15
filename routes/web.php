@@ -86,6 +86,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/task/store/{client}', [TaskController::class, 'storeTask'])->name('task.store');
     Route::get('/task/show/{client}', [TaskController::class, 'showTask'])->name('task.show');
     Route::get('/task/details/{task}', [TaskController::class, 'showTaskDetails'])->name('task.details');
+    Route::get('/task/toggle/{task}', [TaskController::class, 'toggleStatus'])->name('task.toggle');
 
     //documents
     Route::get('/document/add/{client}', [DocumentController::class, 'addDocument'])->name('document.new');
@@ -100,6 +101,11 @@ Route::middleware(['auth'])->group(function () {
     //contact
     Route::get('/contactperson/show', [ContactController::class, 'showContactPerson'])->name('contactperson.show');
     Route::get('/networkpartner/show', [ContactController::class, 'showNetworkPartner'])->name('networkpartner.show');
+    Route::get('/networkpartner/add', [ContactController::class, 'addNetworkPartner'])->name('networkpartner.new');
+    Route::post('/networkpartner/upload', [ContactController::class, 'storeNetworkPartner'])->name('networkpartner.store');
+    Route::get('/cooporation/add', [ContactController::class, 'addCorporation'])->name('cooporation.new');
+    Route::post('/cooporation/upload', [ContactController::class, 'storeCorporation'])->name('cooporation.store');
+    Route::get('/cooporation/show', [ContactController::class, 'showcooporation'])->name('cooporation.show');
 
 });
 

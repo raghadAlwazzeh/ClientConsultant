@@ -16,9 +16,9 @@
     
     <div class="">
                     <ul class="nav2 navbar-nav2 navbar-left2">
-                        <li class="active"><a href="" class="nav-link">Standorte</a></li>
-                        <li class="dropdown"><a href="" class="nav-link">Netzwekpartner</a></li>
-                        <li class="dropdown"><a href="" class="nav-link">Korperationen</a></li>
+                        <li class="active"><a href="/contactperson/show" class="nav-link">Standorte</a></li>
+                        <li class="dropdown"><a href="/networkpartner/show" class="nav-link">Netzwekpartner</a></li>
+                        <li class="dropdown"><a href="/cooporation/show" class="nav-link">Kooperationen</a></li>
                         <!--li class="dropdown"><a href="/services"  class="nav-link">ddd</a></li>
                         <li class="dropdown"><a href="/career" class="nav-link">mmm</a></li-->
                     </ul>   

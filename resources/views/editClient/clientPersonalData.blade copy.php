@@ -20,11 +20,26 @@
                     <label for="ort">Standort <span class="req">*</span></label>
                     <select id="ort" name="ort" required>
                         <option value="">-- Standort --</option>
-                        <option value="usa" {{ $client->ort == 'usa' ? 'selected' : '' }}>United States</option>
+                        <option value="Bayern" {{ $client->ort == '"Bayern' ? 'selected' : '' }}>Bayern</option>
+                        <option value="Berlin" {{ $client->ort == 'Berlin' ? 'selected' : '' }}>Berlin</option>
+                        <option value="Brandenburg" {{ $client->ort == 'Brandenburg' ? 'selected' : '' }}>Brandenburg</option>
+                        <option value="Bremen" {{ $client->ort == 'Bremen' ? 'selected' : '' }}>Bremen</option>
+                        <option value="Hamburg" {{ $client->ort == 'Hamburg' ? 'selected' : '' }}>Hamburg</option>
+                        <option value="Hessen" {{ $client->ort == 'Hessen' ? 'selected' : '' }}>Hessen</option>
+                        <option value="Mecklenburg-Vorpommern" {{ $client->ort == 'Mecklenburg-Vorpommern' ? 'selected' : '' }}>Mecklenburg-Vorpommern</option>
+                        <option value="Niedersachsen" {{ $client->ort == 'Niedersachsen' ? 'selected' : '' }}>Niedersachsen</option>
+                        <option value="Nordrhein-Westfalen" {{ $client->ort == 'Nordrhein-Westfalen' ? 'selected' : '' }}>Nordrhein-Westfalen</option>
+                        <option value="Rheinland-Pfalz" {{ $client->ort == 'Rheinland-Pfalz' ? 'selected' : '' }}>Rheinland-Pfalz</option></var>
+                        <option value="Saarland" {{ $client->ort == 'Saarland' ? 'selected' : '' }}>Saarland</option>
+                        <option value="Sachsen" {{ $client->ort == 'Sachsen' ? 'selected' : '' }}>Sachsen</option>
+                        <option value="Sachsen-Anhalt" {{ $client->ort == 'Sachsen-Anhalt' ? 'selected' : '' }}>Sachsen-Anhalt</option>
+                        <option value="Schleswig-Holstein" {{ $client->ort == 'Schleswig-Holstein' ? 'selected' : '' }}>Schleswig-Holstein</option>
+                        <option value="Thüringen" {{ $client->ort == 'Thüringen' ? 'selected' : '' }}>Thüringen</option>
+                        <!--option value="usa" {{ $client->ort == 'usa' ? 'selected' : '' }}>United States</option>
                         <option value="canada" {{ $client->ort == 'canada' ? 'selected' : '' }}>Canada</option>
                         <option value="uk" {{ $client->ort == 'uk' ? 'selected' : '' }}>United Kingdom</option>
                         <option value="india" {{ $client->ort == 'india' ? 'selected' : '' }}>India</option>
-                        <option value="australia" {{ $client->ort == 'australia' ? 'selected' : '' }}>Australia</option>
+                        <option value="australia" {{ $client->ort == 'australia' ? 'selected' : '' }}>Australia</option-->
                     </select>
                 </div>
             </div>
@@ -73,11 +88,10 @@
                     <label for="education">Höchster formaler Bildungsabschluss <span class="req">*</span></label>
                     <select id="education" name="education" required>
                         <option value="">-- Bildungsabschluss --</option>
-                        <option value="usa" {{ $client->education == 'usa' ? 'selected' : '' }}>United States</option>
-                        <option value="canada" {{ $client->education == 'canada' ? 'selected' : '' }}>Canada</option>
-                        <option value="uk" {{ $client->education == 'uk' ? 'selected' : '' }}>United Kingdom</option>
-                        <option value="india" {{ $client->education == 'india' ? 'selected' : '' }}>India</option>
-                        <option value="australia" {{ $client->education == 'australia' ? 'selected' : '' }}>Australia</option>
+                        <option value="Hochschulausbildung" {{ $client->education == 'Hochschulausbildung' ? 'selected' : '' }}>Hochschulausbildung</option>
+                        <option value="Studium" {{ $client->education == 'Studium' ? 'selected' : '' }}>Studium</option>
+                        <option value="Ausbildung" {{ $client->education == 'Ausbildung' ? 'selected' : '' }}>Ausbildung</option>
+                        <option value="Schulabschluss" {{ $client->education == 'Schulabschluss' ? 'selected' : '' }}>Schulabschluss</option>
                     </select>
                 </div>
 

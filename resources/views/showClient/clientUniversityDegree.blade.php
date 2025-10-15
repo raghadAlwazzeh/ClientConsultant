@@ -20,6 +20,7 @@
                         <li><a href="{{ route('clients.showinformation', $education->client->id) }}" class="nav-link">persönliche Daten</a></li>
                         <li><a href="{{ route('clients.showqualification', $education->client->id) }}" class="nav-link">Qualificationen</a></li>
                         <li><a href="{{ route('conversationprotocol.showall', $education->client->id) }}"  class="nav-link">Gesprächsprotokolle</a></li>
+                        <li><a href="{{ route('task.show', $education->client->id) }}"  class="nav-link">Aufgaben</a></li>
                         <li><a href="{{ url('calendar/'. $education->client->id) }}"  class="nav-link">Kalendar</a></li>
                         <li><a href="{{ route('client.document.show', $education->client->id) }}"  class="nav-link">Dokument</a></li>
                         <!--li class="dropdown"><a href="/career" class="nav-link">mmm</a></li-->

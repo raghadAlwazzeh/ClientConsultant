@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('zip_code');
             $table->string('location');
             $table->string('phone');
-            $table->string('Email');
+            $table->string('email');
             $table->string('vacancies')->nullable();
             $table->timestamps();
         });

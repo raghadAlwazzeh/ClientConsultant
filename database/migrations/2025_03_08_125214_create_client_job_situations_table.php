@@ -16,7 +16,8 @@ return new class extends Migration
             $table->foreignId('client_id')->constrained()->onDelete('cascade');
             $table->string('employment_status')->nullable();
             $table->string('employment_type')->nullable();
-            $table->string('funding_source');
+            $table->string('funding_source')->nullable();
+            $table->string('kundennummer')->nullable();
             $table->string('residence_status')->nullable();
             $table->timestamps();
         });

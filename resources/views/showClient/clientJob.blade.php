@@ -19,6 +19,7 @@
                         <li><a href="{{ route('clients.showinformation', $job->client->id) }}" class="nav-link">persönliche Daten</a></li>
                         <li><a href="{{ route('clients.showqualification', $job->client->id) }}" class="nav-link">Qualificationen</a></li>
                         <li><a href="{{ route('conversationprotocol.showall', $job->client->id) }}"  class="nav-link">Gesprächsprotokolle</a></li>
+                        <li><a href="{{ route('task.show', $job->client->id) }}"  class="nav-link">Aufgaben</a></li>
                         <li><a href="{{ url('calendar/'. $job->client->id) }}"  class="nav-link">Kalendar</a></li>
                         <li><a href="{{ route('client.document.show', $job->client->id) }}"  class="nav-link">Dokument</a></li>
                         <!--li class="dropdown"><a href="/career" class="nav-link">mmm</a></li-->

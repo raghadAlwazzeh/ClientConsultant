@@ -156,8 +156,13 @@
                     <td>{{ \Carbon\Carbon::parse($cal->start_time)->format('d.m.Y') }}</td>
                     <td>{{ \Carbon\Carbon::parse($cal->start_time)->format('H:i') }} - {{ \Carbon\Carbon::parse($cal->end_time)->format('H:i') }}</td>
                     <td>{{ $cal->title }}</td>
-                    <td style="width: 10%;"><a href><button class="btn-table">löchen</button></a></td>
-                </tr>
+                    <form method="POST" action="{{ route('calendar.destroy', $event->id) }}" onsubmit="return confirm('Bist du sicher, dass du dieses Ereignis löschen möchtest?');">
+                        @csrf
+                        @method('DELETE')
+        
+                        <td style="width: 10%;"><a href><button class="btn-table">löchen</button></a></td>
+                    </form>
+                    </tr>
             @endforeach
             @else
             <tr>

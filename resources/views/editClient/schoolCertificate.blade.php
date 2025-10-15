@@ -18,6 +18,7 @@
                         <li><a href="{{ route('clients.showinformation', $education->client->id) }}" class="nav-link">persönliche Daten</a></li>
                         <li><a href="{{ route('clients.showqualification', $education->client->id) }}" class="nav-link">Qualificationen</a></li>
                         <li><a href="{{ route('conversationprotocol.showall', $education->client->id) }}"  class="nav-link">Gesprächsprotokolle</a></li>
+                        <li><a href="{{ route('task.show', $education->client->id) }}"  class="nav-link">Aufgaben</a></li>
                         <li><a href="{{ url('calendar/'. $education->client->id) }}"  class="nav-link">Kalendar</a></li>
                         <li><a href="{{ route('client.document.show', $education->client->id) }}"  class="nav-link">Dokument</a></li>
                         <!--li class="dropdown"><a href="/career" class="nav-link">mmm</a></li-->
@@ -40,11 +41,9 @@
                 <label for="school_country">Erwerbsland <span class="req">*</span></label>
                     <select id="school_country" name="school_country" required>
                         <option value="">-- Erwerbsland --</option>
-                        <option value="usa" {{ $education->school_country == 'usa' ? 'selected' : '' }}>United States</option>
-                        <option value="canada" {{ $education->school_country == 'canada' ? 'selected' : '' }}>Canada</option>
-                        <option value="uk" {{ $education->school_country == 'uk' ? 'selected' : '' }}>United Kingdom</option>
-                        <option value="india" {{ $education->school_country== 'india' ? 'selected' : '' }}>India</option>
-                        <option value="australia" {{ $education->school_country == 'australia' ? 'selected' : '' }}>Australia</option>
+                         @foreach(config('appdata.countries') as $code => $name)
+                            <option value="{{ $code }}" {{ $education->school_country == $code ? 'selected' : '' }}> {{ $name }}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="form-row">
@@ -55,7 +54,7 @@
                     <label for="school_graduation_year">Abschlussjahr<span class="req">*</span></label>
                     <input type="text" id="school_graduation_year" name="school_graduation_year" value="{{$education->school_graduation_year}}">
                 </div>
-                <div class="form-row">
+                <!--div class="form-row">
                 <label for="qualification_level">vergleichbares Abschluss-Niveau </label>
                     <select id="qualification_level" name="qualification_level">
                         <option value="">----</option>
@@ -65,6 +64,10 @@
                     <option value="india" {{ $education->qualification_level == 'india' ? 'selected' : '' }}>India</option>
                     <option value="australia" {{ $education->qualification_level == 'australia' ? 'selected' : '' }}>Australia</option>
                     </select>
+                </div-->
+                <div class="form-row">
+                    <label for="qualification_level">vergleichbares Abschluss-Niveau </label>
+                    <input type="text" id="qualification_level" name="qualification_level" value="$education->qualification_level">
                 </div>
                 <div class="form-row">
                     <label for="sschool_institution">Ausbildungsinstitution</label>
@@ -83,7 +86,7 @@
                     <input type="text" id="school_german_translate" name="school_german_translate" value="{{$education->school_german_translate}}">
                 </div>
 
-                <div class="form-row">
+                <!--div class="form-row">
                     <label for="school_available_certificate">Nachweise Vorhanden </label>
                     <select id="school_available_certificate" name="school_available_certificate">
                         <option value="">----</option>
@@ -93,8 +96,19 @@
                         <option value="india" {{ $education->school_available_certificate == 'india' ? 'selected' : '' }}>India</option>
                         <option value="australia" {{ $education->school_available_certificate == 'australia' ? 'selected' : '' }}>Australia</option>
                     </select>
-                </div>
+                </div-->
                 <div class="form-row">
+                    <label>Nachweise Vorhanden</label>
+                    <div class="choice-group">
+                        <label class="choice-label">
+                            <input type="radio" name="school_available_certificate" value="yes" {{ $client->school_available_certificate == 'yes' ? 'checked' : '' }}> Ja
+                        </label>
+                        <label class="choice-label">
+                            <input type="radio" name="school_available_certificate" value="no" {{ $client->school_available_certificate == 'no' ? 'checked' : '' }}> Nein
+                        </label>
+                    </div>
+                </div>
+                <!--div class="form-row">
                     <label for="school_available_translation">Übersetzung Vorhanden</label>
                     <select id="school_available_translation" name="school_available_translation">
                         <option value="">----</option>
@@ -104,6 +118,17 @@
                         <option value="india" {{ $education->school_available_translation == 'india' ? 'selected' : '' }}>India</option>
                         <option value="australia" {{ $education->school_available_translation == 'australia' ? 'selected' : '' }}>Australia</option>
                     </select>
+                </div-->
+                <div class="form-row">
+                    <label>Übersetzung Vorhanden</label>
+                    <div class="choice-group">
+                        <label class="choice-label">
+                            <input type="radio" name="school_available_translation" value="yes" {{ $client->school_available_translation == 'yes' ? 'checked' : '' }}> Ja
+                        </label>
+                        <label class="choice-label">
+                            <input type="radio" name="school_available_translation" value="no" {{ $client->school_available_translation == 'no' ? 'checked' : '' }}> Nein
+                        </label>
+                    </div>
                 </div>
                 <button class="btn-primary btn-form" type="submit" >Speichern</button>
             </div>

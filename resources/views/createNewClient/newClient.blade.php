@@ -17,11 +17,21 @@
                 <label for="ort">Standort <span class="req">*</span></label>
                     <select id="ort" name="ort" required>
                         <option value="">-- Standort --</option>
-                        <option value="usa">United States</option>
-                        <option value="canada">Canada</option>
-                        <option value="uk">United Kingdom</option>
-                        <option value="india">India</option>
-                        <option value="australia">Australia</option>
+                        <option value="Bayern">Bayern</option>
+                        <option value="Berlin">Berlin</option>
+                        <option value="Brandenburg">Brandenburg</option>
+                        <option value="Bremen">Bremen</option>
+                        <option value="Hamburg">Hamburg</option>
+                        <option value="Hessen">Hessen</option>
+                        <option value="Mecklenburg-Vorpommern">Mecklenburg-Vorpommern</option>
+                        <option value="Niedersachsen">Niedersachsen</option>
+                        <option value="Nordrhein-Westfalen">Nordrhein-Westfalen</option>
+                        <option value="Rheinland-Pfalz">Rheinland-Pfalz</option></var>
+                        <option value="Saarland">Saarland</option>
+                        <option value="Sachsen">Sachsen</option>
+                        <option value="Sachsen-Anhalt">Sachsen-Anhalt</option>
+                        <option value="Schleswig-Holstein">Schleswig-Holstein</option>
+                        <option value="Thüringen">Thüringen</option>
                     </select>
                 </div>
                     
@@ -74,36 +84,39 @@
                 <label for="education">Höchster formaler Bildungsabschluss <span class="req">*</span></label>
                     <select id="education" name="education" required>
                         <option value="">-- Bildungsabschluss --</option>
-                        <option value="usa">United States</option>
-                        <option value="canada">Canada</option>
-                        <option value="uk">United Kingdom</option>
-                        <option value="india">India</option>
-                        <option value="australia">Australia</option>
+                        <option value="Hochschulausbildung">Hochschulausbildung</option>
+                        <option value="Studium">Studium</option>
+                        <option value="Ausbildung">Ausbildung</option>
+                        <option value="Schulabschluss">Schulabschluss</option>
                     </select>
                 </div>
 
                 <div class="form-row">
-                    <label for="anknown">Anonyme Beratung</label>
-                    <select id="unknown" name="unknown_advice">
-                        <option value="">-- Anonyme Beratung --</option>
-                        <option value="usa">United States</option>
-                        <option value="canada">Canada</option>
-                        <option value="uk">United Kingdom</option>
-                        <option value="india">India</option>
-                        <option value="australia">Australia</option>
-                    </select>
+                    <label>Anonyme Beratung</label>
+                    <div class="choice-group">
+                        <label class="choice-label">
+                            <input type="radio" name="unknown_advice" value="yes" > Ja
+                        </label>
+                        <label class="choice-label">
+                            <input type="radio" name="unknown_advice" value="no"> Nein
+                        </label>
+                    </div>
                 </div>
+
 
                 
                 <div class="form-row">
                     <label for="advisor">Anfrage durch</label>
                     <select id="advisor" name="advisor">
                         <option value="">-- Anfrage durch --</option>
-                        <option value="usa">United States</option>
-                        <option value="canada">Canada</option>
-                        <option value="uk">United Kingdom</option>
-                        <option value="india">India</option>
-                        <option value="australia">Australia</option>
+                        <option value="Ratsuchende selbst">Ratsuchende selbst</option>
+                        <option value="keine Angabe">keine Angabe</option>
+                        <option value="Jobcenter">Jobcenter</option>
+                        <option value="Agentur für Arbeit">Agentur für Arbeit</option>
+                        <option value="andre Beratungsstellen">andre Beratungsstellen</option>
+                        <option value="Migranten Organisationen">Migranten Organisationen</option>
+                        <option value="Unternehmen">Unternehmen</option>
+                        <option value="Soziales Umfeld">Soziales Umfeld</option>
                     </select>
                 </div>
 
@@ -115,24 +128,6 @@
                 </div>
 
 
-                <div class="form-row">
-                    <label for="recognition">durch wen von Anerkennungsberatung erfahren?</label>
-                    <select id="recognition" name="recognition_person">
-                        <option value=""></option>
-                        <option value="usa">United States</option>
-                        <option value="canada">Canada</option>
-                        <option value="uk">United Kingdom</option>
-                        <option value="india">India</option>
-                        <option value="australia">Australia</option>
-                    </select>
-                </div>
-
-
-
-                <div class="form-row">
-                    <label for="another-recognition">Falls Sonstiges</label>
-                    <input type="text" id="another-recognition" name="another_recognition_person" >
-                </div>
 
                 <div class="form-row">
                     <label for="last-name">Nachname <span class="req">*</span></label>
@@ -184,14 +179,14 @@
 
                 <div class="form-row">
                     <label for="germany-residence">Wohnsitz in Deutschland</label>
-                    <select id="germany-residence" name="germany_residence">
-                        <option value=""></option>
-                        <option value="usa">United States</option>
-                        <option value="canada">Canada</option>
-                        <option value="uk">United Kingdom</option>
-                        <option value="india">India</option>
-                        <option value="australia">Australia</option>
-                    </select>
+                    <div class="choice-group">
+                        <label class="choice-label">
+                            <input type="radio" name="germany_residence" value="yes"> Ja
+                        </label>
+                        <label class="choice-label">
+                            <input type="radio" name="germany_residence" value="no"> Nein
+                        </label>
+                    </div> 
                 </div>
 
                 <div class="form-row" hidden>
@@ -203,15 +198,18 @@
                     <label for="state">Bundesland</label>
                     <select id="state" name="state">
                         <option value=""></option>
-                        <option value="usa">United States</option>
-                        <option value="canada">Canada</option>
-                        <option value="uk">United Kingdom</option>
-                        <option value="india">India</option>
-                        <option value="australia">Australia</option>
+                        @foreach(config('appdata.german_states') as $code => $name)
+                            <option value="{{ $code }}"> {{ $name }}</option>
+                        @endforeach
                     </select>
                 </div>
 
                 <div class="form-row">
+                    <label for="residence">Wohnsitz </label>
+                    <input type="text" id="residence" name="residence">
+                </div>
+
+                <!--div class="form-row">
                     <label for="residence">Wohnsitz</label>
                     <select id="residence" name="residence">
                         <option value=""></option>
@@ -221,7 +219,7 @@
                         <option value="india">India</option>
                         <option value="australia">Australia</option>
                     </select>
-                </div>
+                </div-->
 
                 
                 <div class="form-row">
@@ -248,12 +246,10 @@
                 <div class="form-row">
                     <label for="country">Geburtsland <span class="req">*</span></label>
                     <select id="country" name="country" required>
-                        <option value=""></option>
-                        <option value="usa">United States</option>
-                        <option value="canada">Canada</option>
-                        <option value="uk">United Kingdom</option>
-                        <option value="india">India</option>
-                        <option value="australia">Australia</option>
+                        <option value="">Bitte wählen</option>
+                        @foreach(config('appdata.countries') as $code => $name)
+                            <option value="{{ $code }}"> {{ $name }}</option>
+                        @endforeach
                     </select>
                 </div>
 
@@ -279,11 +275,9 @@
                     <label for="first-nationality">Erste Staatsangehörgkeit</label>
                     <select id="first-nationality" name="first_nationality">
                         <option value=""></option>
-                        <option value="usa">United States</option>
-                        <option value="canada">Canada</option>
-                        <option value="uk">United Kingdom</option>
-                        <option value="india">India</option>
-                        <option value="australia">Australia</option>
+                        @foreach(config('appdata.nationalities') as $code => $nationality)
+                            <option value="{{ $code }}">{{ $nationality }}</option>
+                        @endforeach
                     </select>
                 </div>
 
@@ -291,11 +285,9 @@
                     <label for="second-nationality">Ggf. Zweite Staatsangehörgkeit</label>
                     <select id="second-nationality" name="second_nationality">
                         <option value=""></option>
-                        <option value="usa">United States</option>
-                        <option value="canada">Canada</option>
-                        <option value="uk">United Kingdom</option>
-                        <option value="india">India</option>
-                        <option value="australia">Australia</option>
+                        @foreach(config('appdata.nationalities') as $code => $nationality)
+                            <option value="{{ $code }}">{{ $nationality }}</option>
+                        @endforeach
                     </select>
                 </div>
 
@@ -314,6 +306,10 @@
             <label for="form" class="form-label">Früher Anträge</label>
             <div class="responsive-form">
                 <div class="form-row">
+                    <label for="residence">Zu welchem Referenzberuf</label>
+                    <input type="text" id="job" name="job">
+                </div>
+                <!--div class="form-row">
                 <label for="job">Zu welchem Referenzberuf</label>
                     <select id="job" name="job">
                         <option value=""></option>
@@ -323,7 +319,7 @@
                         <option value="india">India</option>
                         <option value="australia">Australia</option>
                     </select>
-                </div>
+                </div-->
                 <div class="form-row" hidden>
                 
                 </div>

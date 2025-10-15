@@ -106,7 +106,7 @@ class TaskController extends Controller
             'client_id' => $client->id,
             'user_id' => Auth::id(),
         ]);
-        return redirect()->back();
+       return redirect('/task/show/' .$client->id);
     }
 
     public function showTask(Client $client){
@@ -116,6 +116,11 @@ class TaskController extends Controller
     public function showTaskDetails(Task $task){
         
         return view('taskDetails', compact('task'));
+    }
+    public function toggleStatus(Task $task){
+        $task->is_done = !$task->is_done;
+        $task->save();
+        return redirect()->back();
     }
     
 }

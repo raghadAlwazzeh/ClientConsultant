@@ -33,7 +33,7 @@
 <div class="whole-container" style="width: 100%;">
     <h3> {{$client->last_name }}, {{$client->first_name }}    </h3>    
     <div class="table-container table-responsive">
-        <h4>Schulicher Abschluss</h4>
+        <h4>Dokumente</h4>
         <table class="table table-bordered">
             <thead>
                 <tr>

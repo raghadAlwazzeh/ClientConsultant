@@ -50,7 +50,11 @@
                 <td>{{ $task->submission_date }}</td>
                 <td>{{ $task->title }}</td>
                 <td>{{ $task->deadline }}</td>
-                <td style="width: 10%;"><a href><button class="btn-table">bearbeiten</button></a></td>
+                <td style="width: 10%;"><a href="{{route('task.toggle', $task)}}"><button 
+                    class="btn-table toggle-status-btn {{ $task->is_done ? 'btn-done' : 'btn-undone' }}" 
+                    data-task-id="{{ $task->id }}">
+                    {{ $task->is_done ? 'erledigt' : 'unerledigt' }}
+                </button></a></td>
                 </tr>
             @endforeach
             @else

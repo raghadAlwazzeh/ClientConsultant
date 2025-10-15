@@ -19,6 +19,7 @@
                         <li><a href="{{ route('clients.showinformation', $task->client->id) }}" class="nav-link">persönliche Daten</a></li>
                         <li><a href="{{ route('clients.showqualification', $task->client->id) }}" class="nav-link">Qualificationen</a></li>
                         <li><a href="{{ route('conversationprotocol.showall', $task->client->id) }}"  class="nav-link">Gesprächsprotokolle</a></li>
+                        <li><a href="{{ route('task.show', $task->client->id) }}"  class="nav-link">Aufgaben</a></li>
                         <li><a href="{{ url('calendar/'. $task->client->id) }}"  class="nav-link">Kalendar</a></li>
                         <li><a href="{{ route('client.document.show', $task->client->id) }}"  class="nav-link">Dokument</a></li>
                         <!--li class="dropdown"><a href="/career" class="nav-link">mmm</a></li-->
@@ -37,28 +38,38 @@
             <label for="form" class="form-label">Aufgaben</label>      
                 <div class="responsive-info">
                     <div class="info-row">
-                        <label for="submission_date">Datum Wiedervorlage</label> <span>{{ $task->submission_date}}</span>
+                        <label class="information-label">Datum Wiedervorlage</label> <span>{{ $task->submission_date}}</span>
                     </div> 
                     <div class="info-row" hidden>
                         
                     </div>
                     <div class="info-row">
-                        <label for="title">Betreff</label><span>{{ $task->title}}</span>
+                        <label class="information-label">Betreff</label><span>{{ $task->title}}</span>
                     </div>
                     <div class="info-row" hidden>
                         
                     </div>
                     <div class="info-row">
-                        <label for="description">Aufgabe</label><span>{{ $task->description}}</span>
+                        <label class="information-label">Aufgabe</label><span>{{ $task->description}}</span>
                     </div>
                     <div class="info-row" hidden>
                         
                     </div>
                     <div class="info-row">
-                        <label for="deadline">zu erlidegen bis</label><span>{{ $task->deadline}}</span>
+                        <label class="information-label">zu erlidegen bis</label><span>{{ $task->deadline}}</span>
                     </div>
                     <div class="info-row" hidden>
                         
+                    </div>
+                    <div class="info-row">
+                        <label class="information-label">Status</label>
+                        <span>
+                            @if($task->is_done)
+                                <span style="color: #428bca; font-weight: bold;">erledigt</span>
+                            @else
+                                <span style="color: rgb(250, 70, 70);; font-weight: bold;">unerledigt</span>
+                            @endif
+                        </span>
                     </div>
                 </div>
             </div>

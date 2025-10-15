@@ -223,6 +223,7 @@ class SeekingAdviceController extends Controller
             'employment_status' => $request->employment_status,
             'employment_type' => $request->employment_type,
             'funding_source' => $request->funding_source,
+            'kundennummer' => $request->kundennummer,
             'residence_status' => $request->residence_status,
         ]);
         return redirect("/newclient/languageskills");
@@ -280,8 +281,8 @@ class SeekingAdviceController extends Controller
         );
         Session::forget('client');
         }
-        if (Session::has('school_data')) {
-            $schoolData = Session::get('school_data');
+        if (Session::has('school_data')  && collect(Session::get('school_data'))->filter()->isNotEmpty()) {
+            $schoolData = Session::get('school_data' );
             $schoolEducation = ClientSchoolEducation::create([
                 'client_id' => $client->id,
                 'school_country' => $schoolData['school_country'],
@@ -296,8 +297,8 @@ class SeekingAdviceController extends Controller
                 'school_available_translation' => $schoolData['school_available_translation'],]);
                 Session::forget('school_data');
         }
-
-        if (Session::has('training_data')) {
+        if (Session::has('training_data')  && collect(Session::get('training_data'))->filter()->isNotEmpty()) {
+            
             $trainingData = Session::get('training_data');
             $training = ClientTraining::create([
                 'client_id' => $client->id,
@@ -327,7 +328,7 @@ class SeekingAdviceController extends Controller
         }
 
 
-        if (Session::has('client_study')) {
+        if (Session::has('client_study')  && collect(Session::get('client_study'))->filter()->isNotEmpty()) {
             $studyData = Session::get('client_study');
             $clientStudy = ClientUniversityDegree::create([
                 'client_id' => $client->id,
@@ -363,6 +364,7 @@ class SeekingAdviceController extends Controller
                 'employment_status' => $employmentData['employment_status'],
                 'employment_type' => $employmentData['employment_type'],
                 'funding_source' => $employmentData['funding_source'],
+                'kundennummer' => $employmentData['kundennummer'],
                 'residence_status' => $employmentData['residence_status'],]);
                 Session::forget('employment_data');
         }
@@ -377,7 +379,7 @@ class SeekingAdviceController extends Controller
                 Session::forget('german_skills');
         }
 
-        
+        return redirect('/clients/'. $client->id);
 
     }
 
